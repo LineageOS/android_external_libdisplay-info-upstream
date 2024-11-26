@@ -1,0 +1,17 @@
+name: "libdisplay-info"
+description:
+    "libdisplay-info is library providing EDID parsing and DisplayID "
+    "functionalities."
+
+third_party {
+homepage: "https://gitlab.freedesktop.org/emersion/libdisplay-info/-/tree/0.2.0?ref_type=tags"
+  identifier {
+    type: "Git"
+    value: "https://gitlab.freedesktop.org/emersion/libdisplay-info.git"
+    primary_source: true
+    version: "66b802d05b374cd8f388dc6ad1e7ae4f08cb3300"
+  }
+  version: "66b802d05b374cd8f388dc6ad1e7ae4f08cb3300"
+  last_upgrade_date { year: 2024 month: 11 day: 20 }
+  license_type: NOTICE
+}
