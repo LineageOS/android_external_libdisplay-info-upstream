@@ -1,0 +1,72 @@
+//
+// Copyright (C) 2017-2020 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+package {
+    default_applicable_licenses: ["external_libdisplay_info_license"],
+}
+
+license {
+    name: "external_libdisplay_info_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-MIT",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+// libdisplay_info
+cc_library_static {
+    name: "libdisplay_info",
+
+    visibility: [
+        ":__subpackages__",
+        "//external/drm_hwcomposer:__subpackages__",
+    ],
+
+    export_include_dirs: [
+        "include",
+    ],
+
+    c_std: "c11",
+
+    srcs: [
+        "cta.c",
+        "cta-vic-table.c",
+        "cvt.c",
+        "displayid.c",
+        "dmt-table.c",
+        "edid.c",
+        "gtf.c",
+        "info.c",
+        "log.c",
+        "memory-stream.c",
+    ],
+}
+
+cc_binary {
+    name: "di-edid-decode",
+    srcs: [
+        "di-edid-decode/cta.c",
+        "di-edid-decode/displayid.c",
+        "di-edid-decode/edid.c",
+        "di-edid-decode/main.c",
+    ],
+    static_libs: [
+        "libdisplay_info",
+    ],
+}
