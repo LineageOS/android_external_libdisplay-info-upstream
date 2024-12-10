@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2017-2020 The Android Open Source Project
+// Copyright (C) 2024 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -32,10 +32,15 @@ license {
 // libdisplay_info
 cc_library_static {
     name: "libdisplay_info",
+    vendor_available: true,
 
     visibility: [
         ":__subpackages__",
         "//external/drm_hwcomposer:__subpackages__",
+        "//device/amlogic/yukawa/hal/gralloc",
+        "//device/linaro/hikey/gralloc",
+        "//device/linaro/hikey/gralloc960",
+        "//vendor:__subpackages__",
     ],
 
     export_include_dirs: [
