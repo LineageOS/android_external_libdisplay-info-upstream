@@ -29,6 +29,21 @@ license {
     ],
 }
 
+// Generate empty id file rather than importing hwdata library
+genrule {
+    name: "pnp-ids",
+    cmd: "touch $(out)",
+    out: ["pnp.ids"],
+}
+
+genrule {
+    name: "pnp-id-table",
+    srcs: [":pnp-ids"],
+    tool_files: ["tool/gen-search-table.py"],
+    cmd: "$(location tool/gen-search-table.py) $(in) $(out) pnp_id_table",
+    out: ["pnp-id-table.c"],
+}
+
 // libdisplay_info
 cc_library_static {
     name: "libdisplay_info",
@@ -61,6 +76,7 @@ cc_library_static {
         "log.c",
         "memory-stream.c",
     ],
+    generated_sources: ["pnp-id-table"],
 }
 
 cc_binary {
