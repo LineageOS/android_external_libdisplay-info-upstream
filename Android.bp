@@ -81,6 +81,7 @@ cc_library_static {
 
 cc_binary {
     name: "di-edid-decode",
+    vendor_available: true,
     srcs: [
         "di-edid-decode/cta.c",
         "di-edid-decode/displayid.c",
