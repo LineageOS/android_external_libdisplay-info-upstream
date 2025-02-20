@@ -53,8 +53,7 @@ cc_library_static {
         ":__subpackages__",
         "//external/drm_hwcomposer:__subpackages__",
         "//device/amlogic/yukawa/hal/gralloc",
-        "//device/linaro/hikey/gralloc",
-        "//device/linaro/hikey/gralloc960",
+        "//device/linaro:__subpackages__",
         "//vendor:__subpackages__",
     ],
 
