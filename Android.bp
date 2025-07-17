@@ -49,14 +49,6 @@ cc_library_static {
     name: "libdisplay_info_upstream",
     vendor_available: true,
 
-    visibility: [
-        ":__subpackages__",
-        "//external/drm_hwcomposer:__subpackages__",
-        "//device/amlogic/yukawa/hal/gralloc",
-        "//device/linaro:__subpackages__",
-        "//vendor:__subpackages__",
-    ],
-
     export_include_dirs: [
         "include",
     ],
